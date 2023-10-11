@@ -1,4 +1,4 @@
-package chiselcli
+package chisel
 
 import (
 	"flag"
