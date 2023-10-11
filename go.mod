@@ -7,7 +7,6 @@ require (
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/gorilla/websocket v1.5.0
 	github.com/jpillora/backoff v1.0.0
-	github.com/jpillora/chisel v1.9.1
 	github.com/jpillora/requestlog v1.0.0
 	github.com/jpillora/sizestr v1.0.0
 	golang.org/x/crypto v0.12.0
