@@ -1,4 +1,4 @@
-package main
+package chiselcli
 
 import (
 	"flag"
@@ -12,12 +12,12 @@ import (
 	"strings"
 	"time"
 
-	chclient "github.com/jpillora/chisel/client"
-	chserver "github.com/jpillora/chisel/server"
-	chshare "github.com/jpillora/chisel/share"
-	"github.com/jpillora/chisel/share/ccrypto"
-	"github.com/jpillora/chisel/share/cos"
-	"github.com/jpillora/chisel/share/settings"
+	chclient "github.com/defane/chisel/client"
+	chserver "github.com/defane/chisel/server"
+	chshare "github.com/defane/chisel/share"
+	"github.com/defane/chisel/share/ccrypto"
+	"github.com/defane/chisel/share/cos"
+	"github.com/defane/chisel/share/settings"
 )
 
 var help = `
@@ -34,7 +34,7 @@ var help = `
 
 `
 
-func main() {
+func cli() {
 
 	version := flag.Bool("version", false, "")
 	v := flag.Bool("v", false, "")
