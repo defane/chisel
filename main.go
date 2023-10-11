@@ -32,6 +32,40 @@ var help = `
   Read more:
     https://github.com/jpillora/chisel
 
+`
+
+func main() {
+
+	version := flag.Bool("version", false, "")
+	v := flag.Bool("v", false, "")
+	flag.Bool("help", false, "")
+	flag.Bool("h", false, "")
+	flag.Usage = func() {}
+	flag.Parse()
+
+	if *version || *v {
+		fmt.Println(chshare.BuildVersion)
+		os.Exit(0)
+	}
+
+	args := flag.Args()
+
+	subcmd := ""
+	if len(args) > 0 {
+		subcmd = args[0]
+		args = args[1:]
+	}
+
+	switch subcmd {
+	case "server":
+		server(args)
+	case "client":
+		client(args)
+	default:
+		fmt.Print(help)
+		os.Exit(0)
+	}
+}
 
 var commonHelp = `
     --pid Generate pid file in current working directory
